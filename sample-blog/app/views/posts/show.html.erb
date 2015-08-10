@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
+<article>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        	<h3> <%= @post.title %> </h3>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+        	<p> <%= @post.description %> </p>
+        </div>
+    </div>
+</article>
 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%#= link_to 'Edit', edit_post_path(@post) %> 
+<%#= link_to 'Back', posts_path %>
