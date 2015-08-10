@@ -8,7 +8,8 @@
           </h2>
         </a>
         <div class="post-body"> 
-          <%= truncate(post.description , length: 150 ) { link_to "<small><i>Continue</i></small>".html_safe, post_path(post) }%>
+          <%= truncate(post.description , length: 150 ) { link_to "<small><i>Continue</i></small>".html_safe, post_path(post) }%> <br/>
+          <% if @editor %> <%= link_to 'Edit' , edit_post_path(post) %> | <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %> <% end %>
         </div>
         <p class="post-meta">Posted by <a href="#">Veeru</a> on <%= post.created_at %> </p>
       </div>
@@ -20,5 +21,6 @@
         <a href="#">Older Posts &rarr;</a>
       </li>
     </ul> -->
+    <% if @editor %> <%= link_to 'Create Post' , new_post_path , :class=>"btn btn-primary" %> <% end %>
   </div>
 </div>
